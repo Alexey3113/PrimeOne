@@ -1,0 +1,628 @@
+//<МИКСИНЫ>===============================================================================================
+@import "mixins.scss";
+//</МИКСИНЫ>===============================================================================================
+
+//<ШРИФТЫ>===============================================================================================
+
+//<Подключаем шрифты>=======================================================================================
+
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=PT+Sans&display=swap');
+// PT Sans Bebas Neue
+
+@font-face {
+	font-family: 'Conv_AkzidenzGrotesk-Regular';
+	src: url('../fonts/AkzidenzGrotesk-Regular.eot');
+	src: local('☺'), url('../fonts/AkzidenzGrotesk-Regular.woff') format('woff'), url('../fonts/AkzidenzGrotesk-Regular.ttf') format('truetype'), url('../fonts/AkzidenzGrotesk-Regular.svg') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Oleo+Script&display=swap');
+// Oleo Script
+
+//</Подключаем шрифты>=======================================================================================
+
+//<Иконочные шрифты>==========================================================================================
+
+//</Иконочные шрифты>==========================================================================================
+
+//<Шрифт по умолчанию>==========================================================================================
+$fontfamily: "";
+//</Шрифт по умолчанию>==========================================================================================
+
+//</ШРИФТЫ>=======================================================================================================
+
+//<ПЕРЕМЕННЫЕ>===========================================================================================================
+$minwidth: 320px;
+$mw: 880;
+$md1: $mw+12;
+$md2:767.98;
+$md3:767.98;
+$md4:479.98;
+//</ПЕРЕМЕННЫЕ>===========================================================================================================
+
+//<ОБНУЛЕНИЕ, ОБЩИЕ ПАРАМЕТРЫ>===============================================================================================
+@import "null.scss";
+
+body {
+	color: #000;
+	font-size: 14px;
+
+	&.lock {
+		overflow: hidden;
+	}
+}
+
+//</ОБНУЛЕНИЕ, ОБЩИЕ ПАРАМЕТРЫ>===============================================================================================
+
+//<ОБОЛОЧКА>===========================================================================================================
+.wrapper {
+	width: 100%;
+	min-height: 100%;
+	overflow: hidden;
+
+	&.loaded {}
+}
+
+//</ОБОЛОЧКА>===========================================================================================================
+
+//<ОСНОВНАЯ СЕТКА>===========================================================================================================
+.container {
+	max-width: $mw + px;
+	margin: 0 auto;
+	width: 100%;
+
+	// @media (max-width: $md+px) {
+	// 	max-width: 970px;
+	// }
+	@media (max-width: $md1+px) {
+		max-width: 750px;
+	}
+
+	@media (max-width: $md2+px) {
+		max-width: none;
+		padding: 0 10px;
+	}
+}
+
+//</ОСНОВНАЯ СЕТКА>===========================================================================================================
+
+//<ПОДКЛЮЧЕНИЕ ФАЙЛОВ UI СТИЛЕЙ, ФОРМ И ГОТОВЫХ КЛАССОВ>====================================================================================================
+@import "forms.scss";
+@import "ui.scss";
+//</ПОДКЛЮЧЕНИЕ ФАЙЛОВ UI СТИЛЕЙ, ФОРМ И ГОТОВЫХ КЛАССОВ>====================================================================================================
+
+//<ПОДКЛЮЧЕНИЕ ФАЙЛОВ СТИЛЕЙ СТРАНИЦ И ЭЛЕМЕНТОВ>====================================================================================================
+//@import "../../js/fancybox/jquery.fancybox.scss";
+//@import "datepicker.scss";
+//@import "fontawesome.scss";
+//@import "popover.min.scss";
+//@import "baguetteBox.scss";
+//@import "pagging.scss";
+//@import "icons.scss";
+@import "popup.scss";
+@import "header.scss";
+@import "footer.scss";
+@import "home.scss";
+//</ПОДКЛЮЧЕНИЕ ФАЙЛОВ СТИЛЕЙ СТРАНИЦ И ЭЛЕМЕНТОВ>====================================================================================================
+
+//<ОСНОВНОЙ БЛОК>====================================================================================================
+.content {}
+
+.private {
+	@include flexbox;
+	background: #000;
+	margin: 0 0 70px 0;
+
+	// .private__column
+	@media (max-width:$md2+px) {
+		margin: 0 0 30px 0;
+	}
+
+	&__column {
+		flex: 0 0 50%;
+
+		@media (max-width: $md2+px) {
+			flex: 1 1 100%;
+
+			&:first-child {
+				display: none;
+			}
+		}
+	}
+}
+
+.private-image {
+	height: 100%;
+
+}
+
+
+.private-body {
+	padding: 75px 0 60px 75px;
+
+	@media (max-width: $md2+px) {
+		padding: 0 10px 0 10px;
+	}
+
+	// .private-body__title
+	@media (max-width: $md1+px) {
+		padding: 35px 0 25px 35px;
+	}
+
+	&__title {
+		font-family: "Bebas Neue";
+		font-size: 50px;
+		line-height: 50px;
+		text-transform: uppercase;
+		letter-spacing: 5px;
+		color: #ffffff;
+		margin: 0 0 30px 0;
+
+		@media (max-width: $md2+px) {
+			font-size: 37px;
+		}
+	}
+
+	// .private-body__text
+
+	&__text {
+		font-family: "PT Sans";
+		color: #ffffff;
+		font-size: 15px;
+		line-height: 25px;
+		margin: 0 0 65px 0;
+	}
+
+	// .private-body__buttons
+
+	&__buttons {}
+}
+
+.private-body-content {
+	max-width: 305px;
+}
+
+.buttons {
+	display: flex;
+	align-items: center;
+	// .buttons__1
+
+	&__1 {
+		margin: 0 12px 0 0;
+	}
+
+	// .buttons__2
+
+	&__2 {}
+}
+
+.link {
+	color: black;
+	font-size: 15px;
+	text-decoration: underline;
+	text-transform: uppercase;
+	letter-spacing: 1.5px;
+	font-family: 'Bebas Neue';
+
+	&--w {
+		color: white;
+	}
+}
+
+.btn {}
+
+.btn--w {}
+
+//====================================================================================================
+.products {
+	margin: 0 0 40px 0;
+
+	@media (max-width: $md2+px) {
+		padding: 0 5px 0 5px;
+	}
+
+	@media (max-width:$md2+px) {
+		margin: 0;
+	}
+
+	// .products__column
+	&__column {
+		flex: 0 0 25%;
+		margin: 0 0 40px 0;
+
+		@media (max-width:$md2+px) {
+			flex: 0 0 50%;
+		}
+
+		@media (max-width:380px) {
+			flex: 0 0 100%;
+		}
+	}
+}
+
+.container {}
+
+.products-body {
+	@include flexbox;
+
+	@media (max-width:$md2+px) {
+		flex-wrap: wrap;
+
+	}
+
+}
+
+.products-item {
+	@include flexbox;
+	flex-direction: column;
+	height: 100%;
+	// .products-item__image
+
+	&__image {
+		display: inline-block;
+		position: relative;
+		z-index: 1;
+
+		padding: 0 0 100% 0;
+	}
+
+	// .products-item__title
+
+	&__title {
+		max-width: 165px;
+		height: 50px;
+		overflow: hidden;
+		display: block;
+		color: #000000;
+		font-size: 25px;
+		line-height: 25px;
+		text-transform: uppercase;
+		letter-spacing: 2.5px;
+		font-family: "Bebas Neue";
+		margin: 20px 0 30px 0;
+
+		@media (max-width:380px) {
+			max-width: none;
+			height: auto;
+			overflow: visible;
+		}
+	}
+
+	// .products-item__text
+
+	&__text {
+		max-width: 185px;
+		flex: 1 1 auto;
+		display: block;
+		margin: 0 0 25px 0;
+		font-family: "PT Sans";
+		color: #000000;
+		font-size: 15px;
+		line-height: 25px;
+
+		@media (max-width:380px) {
+			max-width: none;
+		}
+
+	}
+
+	// .products-item__btn
+
+	&__btn {
+		margin: 0 0 25px 0;
+		max-width: 140px;
+	}
+
+	// .products-item__link
+
+	&__link {
+		display: block;
+	}
+}
+
+//====================================================================================================
+
+.why {
+	background-color: #ebebeb;
+
+}
+
+.why-top {
+	background: #000;
+	margin: 0 0 27px 0;
+	@include flexbox;
+
+
+	// .why-top__column
+
+	&__column {
+		flex: 0 0 50%;
+
+
+		@media (max-width:$md1+px) {
+			flex: 0 0 100%;
+
+			&:last-child {
+				display: none;
+			}
+		}
+	}
+
+	// .why-top__image
+
+	&__image {
+		height: 100%;
+	}
+
+	// .why-top__text
+
+	&__text {
+		text-align: right;
+		padding: 50px 60px 50px 0;
+		color: #ffffff;
+		font-family: "Bebas Neue";
+		font-size: 50px;
+		line-height: 25px;
+		text-transform: uppercase;
+		letter-spacing: 5px;
+
+		@media (max-width:$md1+px) {
+			text-align: center;
+			padding: 30px 0 30px 0;
+			font-size: 45px;
+		}
+
+		@media (max-width:$md2+px) {
+			font-size: 35px;
+		}
+	}
+}
+
+.ibg {}
+
+.why-body {
+	@media (max-width: $md2+px) {
+		padding: 0 5px 0 5px;
+	}
+
+	// .why-body__column
+
+	&__column {
+		flex: 50%;
+		margin: 0 0 50px 0;
+
+		@media (max-width:$md2+px) {
+			flex: 1 1 100%;
+			margin-left: 10px;
+		}
+	}
+
+
+}
+
+.why-body-row {
+	@include flexbox;
+	flex-wrap: wrap;
+}
+
+
+.why-body-item {
+	@include flexbox;
+	// .why-body-item__image
+
+	&__image {
+		width: 100px;
+		height: 100px;
+		background-color: #000000;
+		@include flexbox;
+		justify-content: center;
+		align-items: center;
+	}
+}
+
+.why-body-item-body {
+	padding: 0 0 0 13px;
+
+	// .why-body-item-body__title
+	@include flexbox;
+	flex-direction: column;
+
+
+	&__title {
+		flex: 1 1 100%;
+		font-size: 25px;
+		line-height: 25px;
+		color: #000000;
+		font-family: "Bebas Neue";
+		letter-spacing: 2.5px;
+		text-transform: uppercase;
+
+		@media (max-width:$md4+px) {
+			font-size: 20px;
+		}
+
+	}
+
+	// .why-body-item-body__text
+
+	&__text {
+		font-family: "PT Sans";
+		color: #000000;
+		line-height: 25px;
+		font-size: 15px;
+		padding: 0 15px 0 0;
+		// flex: 1 1 100%
+	}
+}
+
+//====================================================================================================================
+.hello {
+	padding: 75px 10px 0 10px;
+}
+
+.container {}
+
+.hello-text {
+	color: #000000;
+	font-size: 50px;
+	line-height: 25px;
+	text-transform: uppercase;
+	letter-spacing: 5px;
+	font-family: "Bebas Neue";
+	margin: 0 0 40px 0;
+}
+
+.hello-body {
+	@include flexbox;
+	flex-wrap: wrap;
+	;
+	// .hello-body__column
+
+	&__column {
+		margin: 0 0 30px 0;
+		flex: 0 0 50%;
+
+		@media (max-width: $md2+px) {
+			flex: 1 1 100%;
+		}
+
+		&:first-child {
+			background: url('../img/block4/svg/1.png') no-repeat;
+			padding: 5px;
+		}
+
+		&:nth-child(2) {
+			background: url('../img/block4/svg/2.png') no-repeat;
+			padding: 0 0 0 5px;
+		}
+
+		&:nth-child(3) {
+			background: url('../img/block4/svg/3.png') no-repeat;
+		}
+	}
+
+	// .hello-body__text
+
+	&__text {
+		
+
+		& a {
+			color: #000000;
+			padding: 0 0 0 30px;
+			font-family: "PT Sans";
+			line-height: 25px;
+			font-size: 15px;
+		}
+
+
+	}
+
+	// .hello-body__sosical
+
+	&__sosical {}
+}
+
+.hello-body-column4-row {
+
+	& a {
+		display: inline-block;
+		margin: 0 31px 0 0;
+	}
+}
+
+//=================================================================================================================
+.registr {
+	
+	@include flexbox;
+	background-color: black;
+	@media (max-width: $md2+px) {
+			flex-wrap: wrap;
+		}
+
+	// registr__column
+	&__column {
+		flex: 0 0 50%;
+		@media (max-width: $md2+px) {
+			flex: 1 1 100%;
+		}
+	}
+}
+
+.registr-map {
+	height: 100%;
+	@media (max-width: $md2+px) { 
+		height: 400px;
+	}
+}
+
+.inpt {
+	border: 2px solid #959595;
+	height: 50px;
+	background-color: #252525;
+	width: 100%;
+	font-size: 17px;
+	color: #848484;
+	padding: 3px 0 3px 7px;
+}
+
+.registr-body {
+	padding: 50px 56px;
+	@media (max-width: $md2+px) {
+		padding: 10px 12px;
+	}
+
+	// .registr-body__title
+
+	&__title {
+		font-family: "Bebas Neue";
+		font-size: 25px;
+		line-height: 25px;
+		text-transform: uppercase;
+		letter-spacing: 2.5px;
+		margin: 0 0 23px 0;
+		color: #ffffff;
+	}
+
+	// .registr-body__name
+
+	&__name {
+
+		margin: 0 0 17px 0;
+		// border: 2px solid #959595;
+		// height: 50px;
+		// background-color: #252525;
+		// width: 374px;
+	}
+
+	// .registr-body__email-or-phone
+
+	&__email-or-phone {
+		margin: 0 0 17px 0;
+		// border: 2px solid #959595;
+		// height: 50px;
+		// background-color: #252525;
+		// width: 374px;
+	}
+
+	// .registr-body__message
+
+	&__message {
+		margin: 0 0 17px 0;
+		height: 90px;
+		padding: 6px 0 3px 7px;
+	}
+
+	// .registr-body__button
+
+	&__button {}
+}
+
+.registr-content {
+	max-width: 375px;
+}
+
+.forms {}
+
+
+//</ОСНОВНОЙ БЛОК>====================================================================================================
